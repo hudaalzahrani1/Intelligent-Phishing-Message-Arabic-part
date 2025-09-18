@@ -84,6 +84,8 @@ try:
         with open("tfidf_vectorizer.pkl", "rb") as f:
             vectorizer = pickle.load(f)
         model = data  # الملف spam_classifier.pkl فيه الموديل فقط
+except Exception as e:
+    st.error(f"⚠️ خطأ في تحميل الملفات: {e}")
 
 # ===== الواجهة =====
 st.markdown("<h1>🚀 مصنّف الإيميلات (احتيالي / عادي)</h1>", unsafe_allow_html=True)
